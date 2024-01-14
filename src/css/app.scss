@@ -56,12 +56,15 @@ $bg:#038998;
 
 @media screen and (max-width:767px) {
     html{
-        font-size: 62%;
+        font-size: 61%;
     }
 
     .home_page{
         grid-template-columns: repeat(1,1fr);
         grid-template-rows: repeat(2,1fr);
+        row-gap: 2rem;
+        column-gap: 0rem;
+
     }
     
 }
@@ -110,7 +113,7 @@ $bg:#038998;
     align-items: flex-start;
     
     .Hero_txt_sec1{
-        height: 50%;
+        height: 40vh;
 
         h1{
             font-size: 2.8rem;
@@ -154,15 +157,7 @@ $bg:#038998;
     }
 }
 
-@media screen and (max-width:767px){
-    .h_d_3_grp{
 
-        img{
-
-        }
-    }
-
-}
 
 .Hero_txt_sec2{
     display: flex;
@@ -192,10 +187,20 @@ $bg:#038998;
     .img{
         @include flex();
         gap: 1.5rem;
+        
+        .img_tr{
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
         img{
             height: 10rem;
             width: 10rem;
             border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.6s;
+            &:hover{
+                transform: scale(1.2);
+            }
         }
 
         .btn_group{
@@ -213,6 +218,18 @@ $bg:#038998;
     }
 }
 
+@media screen and (max-width:767px){
+
+    .Hero_txt_sec1{
+        height: 10vh;
+    }
+   
+    .Hero_txt_sec2{
+        margin-top: -36%;
+        height: 20vh;
+    }
+
+}
 // sec2
 
 .sec2{
@@ -255,5 +272,12 @@ $bg:#038998;
             height: 1.7rem;
                 width: 1.7rem;
         }
+    }
+}
+
+@media screen and (max-width:767px){
+
+    .sec2{
+        padding: 0% 1%;
     }
 }

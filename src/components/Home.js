@@ -63,7 +63,10 @@ const Home = () => {
                             </div>
                    
                     <div className="img">
+                        <div className="img_tr">
+
                         <img src="/pics/fashion-little-boy.jpg" alt="web_pic" />
+                        </div>
                         <div className="btn_group">
                         <button>INSTAGRAM</button>
                         <button>TELEGRAM</button>
