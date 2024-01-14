@@ -1,6 +1,25 @@
 import React from 'react'
 
 const Home = () => {
+    
+        const pic=["cartoon-character-with-handbag-sunglasses","cartoon-character-with-yellow-jacket-sunglasses","fashion-little-boy"]
+    
+    const handleLeftArr=(e)=>{
+        e.preventDefault();
+        const sec2=document.getElementById("sec2");
+        let currIndex=0;
+            sec2.style.backgroundImage=`url("/pics/${pic[currIndex]}.jpg")`;
+            currIndex=(currIndex - 1)%pic.length;
+            
+    }
+    const handleRightArr=(e)=>{
+        e.preventDefault();
+        const sec2=document.getElementById("sec2");
+        let currIndex=1;
+            sec2.style.backgroundImage=`url("/pics/${pic[currIndex]}.jpg")`;
+            currIndex=(currIndex + 1)%pic.length;
+            
+    }
   return (
     <div className='home_page'>
        <div className="sec1">
@@ -22,9 +41,14 @@ const Home = () => {
                                 <h1>DIGITAL ART</h1>
                             </div>
                             <div className="hero_div_3">
-                                <button>Goru</button>
-                                <button>Goru</button>
-                                <button>Goru</button>
+                                <div className="h_d_3_grp">
+                                    <img src="/pics/fashion-little-boy.jpg" alt="" />
+                                    <img src="/pics/cartoon-character-with-handbag-sunglasses.jpg" alt="" />
+                                    <img src="/pics/cartoon-character-with-yellow-jacket-sunglasses.jpg" alt="" />
+                                    <img src="/pics/cartoon-character-with-handbag-sunglasses.jpg" alt="" />
+                                    <img src="/pics/cartoon-character-with-yellow-jacket-sunglasses.jpg" alt="" />
+                                    <img src="/pics/fashion-little-boy.jpg" alt="" />
+                                </div>
                     <h1>COLLECTION</h1>            
                             </div>
                         </div>
@@ -50,8 +74,23 @@ const Home = () => {
        </div>
        </div>
 
-       <div className="sec2">
+       <div className="sec2" id='sec2' >
+                <div className="sec2_nav">
+                    <button>Sign In</button>
+                    <button>About</button>
+                    <button>How It Works</button>
+                    <button>Pricing</button>
+                </div>
+                <div className="arrow">
+                    <div className="arr1" onClick={handleLeftArr}>
 
+                    <img src="/pics/arrow.png" alt="" />
+                    </div>
+                    <div className="arr2" onClick={handleRightArr}>
+
+                    <img src="/pics/right-arrow.png" alt="" />
+                    </div>
+                </div>
 
        </div>
       

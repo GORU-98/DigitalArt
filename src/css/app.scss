@@ -4,7 +4,10 @@ body{
     box-sizing: border-box;
     scroll-behavior: smooth;
     height: 100vh;
+    background-color: #FFFFF0;
 }
+
+$bg:#038998;
 
 // mixin started from here
 
@@ -16,9 +19,31 @@ body{
     border-radius: 0.2rem;
     transition: all 0.7s;
     &:hover{
-        background-color: #038998;
+        background-color: $bg;
     }
 
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    
+}
+
+@mixin arrow {
+    height: 2.7rem;
+    width: 2.7rem;
+    background-color: $bg;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.7s ;
+
+    &:hover{
+        background-color: #FFFFF0;
+    }
+    
 }
 
 .home_page{
@@ -29,12 +54,23 @@ body{
 
 }
 
-.sec1{
+@media screen and (max-width:767px) {
+    html{
+        font-size: 62%;
+    }
 
+    .home_page{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+    
+}
+
+.sec1{
+    height: 45vh;
     .nav{
-        display: flex;
+        @include flex();
         justify-content: space-between;
-        align-items: center;
         height: 3.5rem;
 
         h1{
@@ -42,12 +78,15 @@ body{
         }
         
         .nav_sec{
-            display: flex;
-            align-items: center;
+            @include flex();
             gap: 1.5rem;
 
             button{
                 @include btn();
+                color: $bg;
+                &:hover{
+                    color: black;
+                }
             }
 
             li{
@@ -56,7 +95,8 @@ body{
                 list-style: none;
                 transition: all 0.4s;
                 &:hover{
-                    color: #038998;
+                    color: $bg;
+                    text-decoration: underline;
                 }
             }
         }
@@ -77,8 +117,7 @@ body{
         }
 
         .hero_div_2{
-            display: flex;
-            align-items: center;
+            @include flex();
             gap: 1rem;
             margin-top: -2.5rem;
             p{
@@ -88,44 +127,60 @@ body{
 
         .hero_div_3{
             margin-top: -2.5rem;
-            display: flex;
-            align-items: center;
+            @include flex();
             gap: 1rem;
+            
+            .h_d_3_grp{
+               @include flex();
+                // flex-wrap: wrap;
+                
+                img{
+                    height: 2.7rem;
+                    width:2.7rem;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: all 0.5s ease-in-out;
+                    overflow: hidden;
+                    &:hover{
+                        transform: translateY(1rem);
+                        // transform: scale(1.4);
 
-            button{
-                @include btn();
-                height: 2.2rem;
+                    }
+                }
             }
+
+           
         }
     }
 }
 
-.Hero_txt_sec2{
+@media screen and (max-width:767px){
+    .h_d_3_grp{
 
+        img{
+
+        }
+    }
+
+}
+
+.Hero_txt_sec2{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     // gap: 5rem;
-    height: 45vh;
+    height: 45.5vh;
 
     .get_btn{
-        display: flex;
-        align-items: center;
+        @include flex();
         gap: 1rem;
         .icon{
-            display: flex;
-        align-items: center;
-        justify-content: center;
-            height: 2.7rem;
-                width: 2.7rem;
-                background-color: #038998;
-                border-radius:50%;
-                cursor: pointer;
+            @include arrow();
             img{
 
-                height: 2rem;
-                width: 2rem;
+                height: 1.7rem;
+                width: 1.7rem;
             }
         }
     }
@@ -135,10 +190,8 @@ body{
     }
 
     .img{
-        display: flex;
-        align-items: center;
+        @include flex();
         gap: 1.5rem;
-        // justify-content: space-between;
         img{
             height: 10rem;
             width: 10rem;
@@ -153,7 +206,7 @@ body{
             button{
                 @include btn();
                 font-weight: 550;
-                height: 2.8rem;
+                height: 2.9rem;
 
             }
         }
@@ -167,4 +220,40 @@ body{
     background-position: center;
     background-size: cover;
     border-radius: 0.5rem;
+    padding: 0% 4%;
+    transition: all 0.5s;
+    .sec2_nav{
+       @include flex();
+        justify-content: flex-end;
+        height: 3.5rem;
+        gap: 0.9rem;
+
+        button{
+            @include btn();
+
+        }
+        button:nth-child(1){
+            background-color: $bg;
+            &:hover{
+                    color: $bg;
+                   background-color: #FFFFF0;
+                }
+        }
+    }
+
+    .arrow{
+        display: flex;
+        position: absolute;
+        bottom: 2rem;
+        right: 40%;
+        gap: 1rem;
+
+        .arr1,.arr2{
+          @include arrow();
+        }
+        img{
+            height: 1.7rem;
+                width: 1.7rem;
+        }
+    }
 }
