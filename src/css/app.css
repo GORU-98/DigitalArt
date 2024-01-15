@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemon&family=Nunito+Sans:opsz@6..12&display=swap");
+* {
+  font-family: "Lemon", serif;
+  font-family: "Lemon", serif;
+  font-family: "Nunito Sans", sans-serif;
+}
+
 body {
   padding: 0 2%;
   margin: 0;
@@ -38,6 +45,7 @@ body {
 }
 .sec1 .nav h1 {
   cursor: pointer;
+  font-size: 1.7rem;
 }
 .sec1 .nav .nav_sec {
   display: flex;
@@ -114,11 +122,12 @@ body {
 }
 
 .Hero_txt_sec2 {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: 45.5vh;
+  height: 40.5vh;
 }
 .Hero_txt_sec2 .get_btn {
   display: flex;
@@ -198,8 +207,11 @@ body {
     height: 10vh;
   }
   .Hero_txt_sec2 {
-    margin-top: -36%;
-    height: 20vh;
+    margin-top: -33%;
+    height: 22vh;
+  }
+  .hero_div_2 p {
+    width: 30% !important;
   }
 }
 .sec2 {
@@ -263,5 +275,6 @@ body {
 @media screen and (max-width: 767px) {
   .sec2 {
     padding: 0% 1%;
+    margin-top: 6rem;
   }
 }/*# sourceMappingURL=app.css.map */
